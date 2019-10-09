@@ -103,7 +103,6 @@ bool TVector<ValType>::operator==(const TVector &v) const
 {
 	if (Size != v.Size)
 	{
-		cout << "Несравнимые вектора" << endl;
 		return 0;
 	}
 	else
@@ -118,7 +117,7 @@ bool TVector<ValType>::operator!=(const TVector &v) const
 {
 	if (Size != v.Size)
 	{
-		cout << "Несравнимые вектора" << endl; return 0;
+		return 0;
 	}
 	else
 		for (int i = 0; i < Size; i++)
@@ -174,7 +173,7 @@ TVector<ValType> TVector<ValType>::operator+(const TVector<ValType> &v)
 {
 	if (Size != v.Size)
 	{
-		cout << "Разный размер" << endl; throw Size;
+		throw Size;
 	}
 	TVector<ValType> tmp(Size, StartIndex);
 	for (int i = 0; i < Size; i++)
@@ -187,7 +186,7 @@ TVector<ValType> TVector<ValType>::operator-(const TVector<ValType> &v)
 {
 	if (Size != v.Size)
 	{
-		cout << "Разный размер" << endl; throw Size;
+		 throw Size;
 	}
 	TVector<ValType> tmp(Size, StartIndex);
 	for (int i = 0; i < Size; i++)
@@ -200,7 +199,7 @@ ValType TVector<ValType>::operator*(const TVector<ValType> &v)
 {
 	if (Size != v.Size)
 	{
-		cout << "Разный размер" << endl; throw Size;
+		 throw Size;
 	}
 	ValType a = 0;
 	for (int i = 0; i < Size; i++)
